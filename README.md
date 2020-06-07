@@ -1,6 +1,15 @@
 # RetroPie Moonlight #
+	
 This is a set of scripts with the intent of helping people stream games from their PC to their RetroPie. These scripts use [Moonlight](http://moonlight-stream.com/) to query your PC for your available games and generates a "Console" within RetroPi along with a set of "Roms" representing your games. Each rom is actually a shell script configured to tell moonlight to begin streaming the game of your choice.
 ![alt text](https://github.com/joelghill/retromoonlight/blob/master/Images/moonlight_gameslist.png "Moonlight game collection in Eudora theme")
+
+## Why this fork
+Retromoonlight has not been updated for the past three years. 
+Unfortunately, some issues makes it unusable.
+
+This fork does not add anything but simply fix the setup scripts by doing two things:
+	*itimer.gpg is checked out in the retromoonlight folder, fix chown called
+	*moonlight cannot be installed without libcurl3, which is no longer available. Instead, moonlight will be compiled using libcurl4 
 
 ## Why Use This? ##
 There is already a [solution available](https://github.com/TechWizTime/moonlight-retropie) for streaming Steam Big Picture Mode, why bother using this? There are a few reasons:
@@ -20,7 +29,7 @@ There is already a [solution available](https://github.com/TechWizTime/moonlight
   2. In GeForce Expereince, go to Shield Settings and enable game streaming.
 
 #### On your raspberry pi: ####
-  1. git clone https://github.com/joelghill/retromoonlight.git
+  1. git clone https://github.com/Zangdaarr/retromoonlight.git
   2. cd retromoonlight
   3. sudo bash ./Install.sh. If a first time install, use option 1. Otherwise you can use the other options to install select components, or remove MoonLight from RetroPie
   5. Run emulationstation
@@ -48,6 +57,7 @@ I am gradually adding support for custom themes. The current version of retro mo
 
 ## Credits ##
 
+Thanks to [Jowl Ghill](https://github.com/joelghill/retromoonlight) for the original code.
 A huge thank you to [TechWizTime](https://github.com/TechWizTime) for his work in creating the install and setup script for moonlight in RetroPie. I am building on his work and could not have developed this without following his example!
 
 
