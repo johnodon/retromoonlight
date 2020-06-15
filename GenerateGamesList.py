@@ -41,6 +41,14 @@ def read_games_list(file_path):
         f.close()
     return input_data
 
+def get_game_name(game_listing):
+    import re as regex
+    search_result = regex.search("\d+\.\s(.*)", game_listing)
+
+    if search_result:
+        return search_result.group(1)
+
+    return None
 
 def is_valid_listing(game_listing):
     """
@@ -48,12 +56,8 @@ def is_valid_listing(game_listing):
     :param game_listing: A single line of text from the Moonlight List command
     :return: True if it is a valid listing, False otherwise
     """
-    try:
-        int(game_listing.split(".")[0])
-        return True
-    except Exception as e:
-        return False
-
+    import re as regex
+    return regex.search("\d+\.\s.*", game_listing) is not None
 
 def create_script(game_title):
     """
@@ -94,8 +98,7 @@ except Exception as e:
 clear_directory(roms_directory)
 
 for gameListing in RawInputList:
-    parsedListing = gameListing.strip()
-    if is_valid_listing(parsedListing) is False:
-        continue
-    parsedListing = parsedListing.strip().split('.')[1].strip()
-    write_script(create_script(parsedListing), parsedListing)
+    game_name = get_game_name(gameListing)
+
+    if game_name:
+        write_script(create_script(game_name), game_name)
