@@ -14,5 +14,5 @@ cmake ../
 make
 sudo make install
 sudo ldconfig
-cd retromoonlight
+cd ..
 echo -e "\nMoonlight Installed!"
