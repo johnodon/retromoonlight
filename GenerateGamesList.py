@@ -8,7 +8,7 @@ import stat
 RefreshListScript = 'Refresh.sh'
 
 BashHeader = '#!/bin/bash\n'
-StreamString = 'moonlight stream -720 -app '
+StreamString = 'moonlight stream -1080 -app '
 roms_directory = '/home/pi/RetroPie/roms/moonlight/'
 
 
@@ -64,7 +64,7 @@ def create_script(game_title):
     Creates the script to run a game title
     :param game_title: The name of the game to launch
     """
-    script = '{}{}\"{}\"'.format(BashHeader, StreamString, game_title)
+    script = '{}{}\"{}\"'.format(BashHeader, StreamString, game_title, ip)
     print('\nCreating a script for {}:'.format(game_title))
     print(script)
     return script
