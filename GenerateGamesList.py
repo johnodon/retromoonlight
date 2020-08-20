@@ -11,7 +11,6 @@ BashHeader = '#!/bin/bash\n'
 StreamString = 'moonlight stream -1080 -app '
 roms_directory = '/home/pi/RetroPie/roms/moonlight/'
 ip = '192.168.1.50'
-space = ' '
 
 
 def clear_directory(folder_path):
@@ -66,7 +65,7 @@ def create_script(game_title):
     Creates the script to run a game title
     :param game_title: The name of the game to launch
     """
-    script = '{}{}\"{}\"'.format(BashHeader, StreamString, game_title, space, ip)
+    script = '{}{}\"{}\" {}'.format(BashHeader, StreamString, game_title, ip)
     print('\nCreating a script for {}:'.format(game_title))
     print(script)
     return script
