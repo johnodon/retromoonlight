@@ -29,7 +29,7 @@ There is already a [solution available](https://github.com/TechWizTime/moonlight
   2. In GeForce Expereince, go to Shield Settings and enable game streaming.
 
 #### On your raspberry pi: ####
-  1. git clone https://github.com/Zangdaarr/retromoonlight.git
+  1. git clone https://github.com/johnodon/retromoonlight.git
   2. cd retromoonlight
   3. sudo bash ./Install.sh. If a first time install, use option 1. Otherwise you can use the other options to install select components, or remove MoonLight from RetroPie
   5. Run emulationstation
@@ -38,22 +38,6 @@ Once EmulationStation is running, navigate to the Moonlight console, select the 
 
 ## Usage ##
 Emulationstation should now have an entry for Moonlight. There will be a single "Rom" called refresh. Use this to update your games list. After using refresh command you will need to reboot emulationstation.
-
-## Themes ##
-
-I am gradually adding support for custom themes. The current version of retro moonlight works in:
-
-  * Carbon (several variants)
-  * Simple
-  * Simple-Dark
-  * Clean-look
-  * minimal
-  * Eudora-Updated
-  * flat
-  * flat-dark
-  
-  ![alt text](https://github.com/joelghill/retromoonlight/blob/master/Images/menu_simple-dark_theme.PNG "Moonlight theme")
-  
 
 ## Credits ##
 
